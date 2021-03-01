@@ -1,0 +1,77 @@
+@import '../variables';
+@import '../fonts';
+
+.cpn-btn {
+  display: inline-block;
+  transition: .3s ease-in-out;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  padding: 12px 18px;
+  font-size: 1rem;
+  line-height: normal;
+  border-radius: 30px;
+  color: $colorWhite;
+  background-color: $colorBiscay;
+  border-color: transparent;
+
+  &:hover {
+    color: $colorWhite;
+  }
+
+  &--login {
+    background-color: $colorDesertStorm;
+    color: $colorBiscay;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      background-color: $colorBiscay;
+      -webkit-mask-image: url('/images/svg/enter_icon.svg');
+      -webkit-mask-size: 22px 22px;
+      -webkit-mask-repeat: no-repeat ;
+      margin-right: 10px;
+    }
+
+
+    &:hover {
+      $darkenColor: darken($colorDesertStorm, 60%);
+      color: $colorShark;
+      
+      &::before {
+        background-color: $colorShark;
+      }
+    }
+  }
+
+  &--red {
+    font-size: 1.125rem !important;
+    background-color: $colorAmaranth;
+    border-color: transparent;
+    color: $colorWhite;
+    display: inline-flex;
+    align-items: center;
+    -webkit-box-shadow: 0px 10px 40px -4px rgba(238, 39, 70, 0.55);
+    -moz-box-shadow: 0px 10px 40px -4px rgba(238,39,70, 0.55);
+    box-shadow: 0px 10px 40px -4px rgba(238, 39, 70, 0.55);
+
+    &::after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      width: 18px;
+      height: 20px;
+      background-color: $colorWhite;
+      -webkit-mask-image: url('/images/svg/findout_icon.svg');
+      -webkit-mask-size: 18px 20px;
+      -webkit-mask-repeat: no-repeat ;
+      margin-left: 10px;
+    }
+  }
+
+
+}

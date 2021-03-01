@@ -1,0 +1,22 @@
+/*
+* presentation
+*/
+.presentation {
+  &__inner {
+    padding-top: 40px;
+    max-width: 460px;
+  }
+
+  &__about {
+    background-color: $colorDesertStorm;
+  }
+  
+  @media (max-width: 576px) {
+    &__left{
+      order: 2;
+    }
+    &__right{
+      order: 1;
+    }
+  }
+}

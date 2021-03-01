@@ -1,0 +1,11 @@
+@mixin FistTitle($size:2.75rem, $color:$colorBiscay){
+  font-size: $size !important;
+  color: $color !important;
+  line-height: $size !important;
+  font-family: "Circe-Bold", sans-serif !important;
+  margin-top: 0 !important;
+  margin-bottom: 30px !important;
+
+}
+
+

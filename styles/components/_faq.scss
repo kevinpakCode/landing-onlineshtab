@@ -1,0 +1,14 @@
+.faq {
+  background-color: $colorWhite;
+  padding-bottom: 60px;
+  
+  &-title {
+    margin-bottom: 25px;
+    font-weight: 600;
+  }
+
+  &__inner {
+    border-top: 3px solid $colorDesertStorm;
+    padding-top: 55px;
+  }
+}

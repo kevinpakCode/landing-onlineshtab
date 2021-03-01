@@ -1,0 +1,81 @@
+.principle {
+  &__left {
+    padding-top: 40px;
+
+    &-icon {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 40px;
+    }
+
+    &-title {
+      font-size: 1.1rem !important;
+      line-height: 1.3rem !important;
+      color: #1b3073 !important;
+      font-family: "Circe-Bold", sans-serif !important;
+      margin-bottom: 20px !important;
+      margin-left: 40px;
+
+      @media (min-width: 769px) {
+        font-size: 2.2rem !important;
+        line-height: 2.2rem !important;
+        max-width: 420px;
+        margin-left: 0;
+      }
+    }
+  }
+
+  &__right {
+
+    @media (max-width: 996px) {
+      padding-left: 298px;
+    }
+
+    @media (max-width: 960px) {
+      padding-left: 240px;
+    }
+
+    @media (max-width: 767px) {
+     // padding-left: 232px;
+     padding-left: 55px !important;
+    }
+
+
+    &-title {
+      margin-bottom: 30px;
+      
+      @media (min-width: 769px) {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    &-item {
+      font-size: 1rem;
+      max-width: 100%;
+
+      @media (min-width: 767px) {
+        max-width: 475px;
+      }
+
+      &-btn {
+        
+        background-color: $colorCobalSecond !important;
+        padding: 8px 20px !important;
+        font-weight: initial !important;
+        font-family: "Circe-Bold", sans-serif !important;
+        margin-bottom: 15px !important;
+
+        &.cpn-btn {
+          font-size: 1rem !important;
+        }
+
+      }
+    }
+
+    @media (max-width: 992px) {
+      padding-left: 240px;
+    }
+  }
+
+  
+}

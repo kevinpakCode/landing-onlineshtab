@@ -1,0 +1,148 @@
+.others-questions {
+  min-height: 350px;
+  padding-bottom: 40px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 200px);
+    left: 0;
+    bottom: 0;
+    background-color: #1b3073;
+    z-index: 1;
+  }
+  &__inner {
+    .download {
+      padding-bottom: 10px;
+      text-align: right !important;
+
+      &>img {
+        width: 30px;
+      }
+
+      &__text {
+        font-size: 1rem;
+        color: $colorDeepCove;
+      }
+
+      &__link {
+        font-size: 1rem;
+        color: $colorScienceBlue;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__body {
+    padding: 40px 50px 0px 50px;
+    background: $colorGallery;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width:960px) {
+      flex-direction: column;
+      padding: 40px 20px 0px 20px;
+    }
+
+    &-title {
+      font-size: 2.375rem !important;
+      line-height: 2.5rem !important;
+      max-width: 438px !important;
+      margin-bottom: 62px !important;
+
+      @media (max-width:960px) {
+        max-width: 100% !important;
+        font-size: 1.8rem !important;
+        line-height: 2rem !important;
+        margin-bottom: 25px !important;
+        text-align: center !important;
+      }
+    }
+
+    &-contacts {
+      margin-bottom: 35px;
+
+      &-item {
+        display: inline;
+        margin-right: 5px;
+
+        @media (max-width: 960px) {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+
+        &>a {
+          font-size: 2rem;
+          font-family: "Circe-Bold", sans-serif;
+          color: $colorBayofMany;
+
+          @media (max-width: 960px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        &:first-child {
+          &>a {
+            color: $colorAmaranth;
+          }
+        }
+      }
+    }
+
+    &-left {
+      width: calc(100% - 432px);
+      @media (max-width: 960px) {
+        width: 100%;
+      }
+    }
+
+    &-right {
+      width: 432px;
+      padding: 16px;
+
+      @media (max-width: 960px) {
+        width: initial;
+        max-width: 360px;
+        margin: 0 auto;
+        padding: 0;
+      }
+      
+    }
+  }
+
+  &__form {
+    .accept-condition-label {
+      text-align: right;
+    }
+
+    .form-control-row-accept-label {
+      font-size: 0.95rem;
+      line-height: 15px;
+      display: inline-block;
+      margin-bottom: 0px;
+      margin-left: 8px;
+      vertical-align: super;
+    }
+
+    &-btn {
+      width: 200px;
+      justify-content: center;
+      font-size: 18px;
+      position: absolute;
+      right: 100px;
+      bottom: -55px;
+      box-shadow: none !important;
+
+      @media (max-width: 960px) {
+        bottom: -43px;
+      }
+
+      @media (max-width: 565px) {
+        right: 0;
+      }
+    }
+  }
+}

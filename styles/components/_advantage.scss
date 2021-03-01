@@ -1,0 +1,63 @@
+.advantage {
+  &__inner {
+    border-top: 3px solid $colorGallery;
+    padding-top: 55px;
+  }
+
+  &__title {
+    margin-bottom: 55px !important;
+    font-weight: 600;
+  }
+
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    &-item {
+      width: 33.33%;
+      font-size: 1.1rem;
+      line-height: 1.4rem;
+      letter-spacing: -0.2px;
+
+      @media (max-width: 565px) {
+        width: 50%;
+      }
+
+      @media (max-width: 440px) {
+        width: 100%;
+      }
+
+      &-icon {
+        display: inline-block;
+        width: 92px;
+        height: 95px;
+        margin-bottom: 25px;
+      }
+
+      &-text {
+        padding-right: 10px;
+  
+        @media (max-width: 960px) {
+          font-size: 0.9rem !important;
+          line-height: 1.1rem !important;
+          max-width: 285px !important;
+        }
+  
+        @media (min-width: 565px) {
+          max-width: 285px !important;
+        }
+  
+        p {
+  
+          @media (min-width: 440px) {
+            margin-bottom: 80px !important;
+          }
+          
+        }
+      }
+    }
+
+    
+  }
+}

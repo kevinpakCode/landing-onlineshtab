@@ -1,0 +1,25 @@
+@import 'reset';
+@import 'variables';
+@import 'fonts';
+@import 'components/accordion';
+
+body {
+  background-color: $colorWhite;
+
+  font-size: 1.125rem;
+  font-family: "Circe-Regular", sans-serif;
+  color: $colorBiscay;
+  line-height: 1.5rem;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@import 'components/header';
+@import 'pages/home';
+@import 'components/footer';
+
+
