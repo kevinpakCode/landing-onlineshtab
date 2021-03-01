@@ -12,7 +12,9 @@ class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+        <link rel="shortcut icon" type="image/x-icon" href="/images/uploads/favshtab.png" />
+        </Head>
         <body className="linding-page">
           <div className="wrapper">
             <Header/>
