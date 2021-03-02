@@ -2,8 +2,31 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import { useFormik } from 'formik'
+import * as Yup from 'yup'
+
 
 const OthersQuestion = () => {
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      tel: '',
+      questionRequestCheckbox:''
+    },
+    validationSchema: Yup.object({
+      name: Yup.string()
+        .required('Обязательно поля'),
+      email: Yup.string().email('Введите правильный адрес электронной почты').required('Обязательно поля'),
+      tel: Yup.string()
+        .required('Обязательно поля'),
+      questionRequestCheckbox: Yup.boolean().oneOf([true], 'Field must be checked').required('Обязательно поля'),
+    }),
+    onSubmit: values => {
+      alert(JSON.stringify(values, null, 2))
+    },
+  })
+
   return (
     <div className="others-questions" id="main-form">
         <Container>
@@ -35,25 +58,57 @@ const OthersQuestion = () => {
                     </ul>
                   </div>
                   <div className="others-questions__body-right">
-                    <form method="post"  className="others-questions__form">
+                    <form onSubmit={formik.handleSubmit} className="others-questions__form">
                       <div className="form-row">
-                        <input type="text" className="cpn-field" name="name" placeholder="Имя" required/>
+                        <input
+                          type="text"
+                          className={`cpn-field ${formik.touched.name && formik.errors.name ? 'cpn-field--error': 'cpn-field--valid'}`}
+                          name="name"
+                          placeholder="Имя"
+                          onChange={formik.handleChange}
+                          value={formik.values.name}
+                        />
+                        {formik.touched.name && formik.errors.name ? (<div className="cpn-field-message">{formik.errors.name}</div>) : null}
                       </div>
                       <div className="form-row">
-                        <input type="text" className="cpn-field" name="email"  placeholder="Email" required/>
+                        <input
+                          type="text"
+                          className={`cpn-field ${formik.touched.email && formik.errors.email ? 'cpn-field--error': 'cpn-field--valid'}`}
+                          name="email"
+                          placeholder="Email"
+                          onChange={formik.handleChange}
+                          value={formik.values.email}
+                        />
+                          {formik.touched.email && formik.errors.email ? (<div  className="cpn-field-message">{formik.errors.email}</div>) : null}
                       </div>
                       <div className="form-row">
-                        <input type="text" className="cpn-field" name="tel" placeholder="Телефон" required/>
+                        <input
+                          type="text"
+                          className={`cpn-field ${formik.touched.tel && formik.errors.tel ? 'cpn-field--error': 'cpn-field--valid'}`}
+                          name="tel"
+                          placeholder="Телефон"
+                          onChange={formik.handleChange}
+                          value={formik.values.tel}
+                        />
+                        {formik.touched.tel && formik.errors.tel ? (<div  className="cpn-field-message">{formik.errors.tel}</div>) : null}
                       </div>
                       <div className="form-row">
-                        <input type="checkbox" name="question_request_checkbox" id="accept-condition" required/>
+                        <input
+                          type="checkbox"
+                          className={`cpn-field-checkbox ${((formik.touched.questionRequestCheckbox && formik.errors.questionRequestCheckbox)) ? 'cpn-field--error': 'cpn-field--valid'}`}
+                          name="questionRequestCheckbox"
+                          id="accept-condition"
+                          onChange={formik.handleChange}
+                          value={formik.values.questionRequestCheckbox}
+                        />
+                          
                         <label htmlFor="accept-condition" className="accept-condition-label">
-                          <span className="form-control-row-accept-label">Я согласен с <a href="/welcome/onlineshtab-privacy-policy.pdf">политикой конфиденциальности</a></span>
-                          <span className="form-control-row-accept-label">и <a href="/welcome/onlineshtab-personal-data-processing-policy.pdf">политикой обработки персональных данных</a></span>
+                          <span className="form-control-row-accept-label">Я согласен с <a href="/documents/pdf/onlineshtab-privacy-policy.pdf">политикой конфиденциальности</a></span>
+                          <span className="form-control-row-accept-label">и <a href="/documents/pdf/onlineshtab-personal-data-processing-policy.pdf">политикой обработки персональных данных</a></span>
                         </label>
                       </div>
                       <div className="form-row">
-                        <button className="cpn-btn cpn-btn--red others-questions__form-btn">Отправить</button>
+                        <button type="submit" className="cpn-btn cpn-btn--red others-questions__form-btn">Отправить</button>
                       </div>
                     </form>
                   </div>

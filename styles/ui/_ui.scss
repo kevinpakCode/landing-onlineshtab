@@ -159,5 +159,43 @@ input {
   margin-bottom: 18px;
 }
 
+/*
+* cpn-field
+*/
+.cpn-field {
+  border: solid 2px transparent;
+
+  &-checkbox {
+    &[type="checkbox"] {
+      & + label {
+        &::before {
+          border: solid 2px transparent;
+        }
+      }
+    }
+  }
+
+  &-message {
+    font-size: 0.8rem;
+    padding-left: 15px;
+    color: $colorAmaranth;
+  }
+
+  &--error {
+    border-color: $colorAmaranth;
+
+    &[type="checkbox"] {
+      & + label {
+        &::before {
+          border-color: $colorAmaranth;
+          background-image: none;
+          background-color: $colorWhite;
+        }
+      }
+    }
+  }
+}
+
+
 @import '../components/btn.scss';
 @import './icon'
