@@ -16,6 +16,10 @@
 
   &:hover {
     color: $colorWhite;
+    background-color: darken($colorBiscay, 7.5%) ;
+    /*$background: $colorDesertStorm;
+    $hover-background: darken($background, 7.5%);
+    $active-background: darken($background, 10%);*/
   }
 
   &--login {
@@ -39,8 +43,8 @@
 
 
     &:hover {
-      $darkenColor: darken($colorDesertStorm, 60%);
       color: $colorShark;
+      background-color: darken($colorDesertStorm, 7.5%);
       
       &::before {
         background-color: $colorShark;
@@ -70,6 +74,35 @@
       -webkit-mask-size: 18px 20px;
       -webkit-mask-repeat: no-repeat ;
       margin-left: 10px;
+    }
+
+
+    &:hover {
+      color: $colorWhite;
+      background-color: darken($colorAmaranth, 7.5%);
+    }
+  }
+
+  &--blue {
+    color: $colorWhite;
+    background-color: $colorCobalSecond;
+    border-color: transparent;
+
+    &:hover {
+      color: $colorWhite;
+      background-color: darken($colorCobalSecond, 7.5%);
+    }
+    
+    &-second {
+      color: $colorWhite;
+      background-color: $colorBlueRibbon;
+      border-color: transparent;
+
+      &:hover {
+        color: $colorWhite;
+        background-color: darken($colorBlueRibbon, 7.5%);
+      }
+      
     }
   }
 

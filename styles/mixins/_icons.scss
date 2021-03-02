@@ -1,0 +1,76 @@
+@mixin icons-layout($w, $h, $nameIcon, $defaultColor, $eventColor) {
+  min-width: $w;
+  min-height: $h;
+  background-color: $defaultColor;
+  -webkit-mask-image: url('/images/svg/'+$nameIcon);
+  -webkit-mask-size: $w $h;
+  -webkit-mask-repeat: no-repeat ;
+  -webkit-mask-position: center;
+}
+
+@mixin icons-formats($w, $h, $nameIcon, $defaultColor:$colorCadetBlue, $eventColor:$colorCornflowerBlueSecond, $activeIcon:false) {
+  display: inline-block;
+
+  &.icon-inner {
+    @include icons-layout($w, $h, $nameIcon, $defaultColor, $eventColor);
+    border: none;
+
+    &:hover{
+      background-color: $eventColor;
+    }
+
+    &:active,
+    &:focus {
+      background-color: $defaultColor
+    }
+  }
+
+
+  &.icon-left {
+    &::before {
+      content: '';
+      position: absolute;
+      @include icons-layout($w, $h, $nameIcon, $defaultColor, $eventColor);
+      left: 0;
+      top: calc(50% - 11px);
+    }
+
+    &:hover {
+      &::before {
+        background-color: $eventColor;
+      }
+    }
+
+    &.active,
+    &:focus {
+      &::before {
+        background-color: $defaultColor;
+      }
+    }
+  }
+
+
+  &.icon-right {
+    &::after {
+      content: '';
+      position: absolute;
+      @include icons-layout($w, $h, $nameIcon, $defaultColor, $eventColor);
+      left: 0;
+      top: calc(50% - 11px);
+    }
+
+    &:hover {
+      &::after {
+        background-color: $eventColor;
+      }
+    }
+
+    &.active,
+    &:focus {
+      &::after {
+        background-color: $defaultColor;
+      }
+    }
+  }
+}
+

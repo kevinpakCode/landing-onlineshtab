@@ -1,0 +1,16 @@
+//@import '../variables';
+@import '../mixins/icons';
+
+/*
+==> icon-close
+*/
+.icon-close {
+  @include icons-formats(14px, 14px, 'i/icon-close.svg', $defaultColor:$colorCadetBlue, $eventColor:$colorCornflowerBlueSecond);
+}
+
+/*
+==> icon-cookie
+*/
+.icon-cookie {
+  @include icons-formats(30px, 30px, 'i/icon-cookie.svg', $defaultColor:$colorWhite, $eventColor:$colorWhite);
+}
