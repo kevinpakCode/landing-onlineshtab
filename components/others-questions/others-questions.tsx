@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 
 const OthersQuestion = () => {
   return (
-    <div className="others-questions">
+    <div className="others-questions" id="main-form">
         <Container>
           <Row>
             <Col sm={12}>
