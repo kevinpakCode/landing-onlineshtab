@@ -1,0 +1,16 @@
+@import './../variables';
+
+.ErrorPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    background: -webkit-linear-gradient(-73deg, transparent 52%, #f1eff0 50%);
+    background-repeat: no-repeat;
+    background-position: 60% 18%, 100%;
+    background-size: 800px, 100%;
+    box-sizing: border-box;
+  }
+}
