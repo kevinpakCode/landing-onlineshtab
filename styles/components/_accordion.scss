@@ -10,6 +10,7 @@
   &__item {
     margin-bottom: 12px;
     width: calc(50% - 15px);
+    align-self: flex-start;
 
     @media (max-width: 767px) {
       width: 100%;
@@ -62,18 +63,46 @@
       }
     }
 
+    
+
     &-body {
-      padding: 10px 25px;
       font-size: 1rem;
       line-height: 1.2rem;
       color: $colorDeepCove;
-
-      display: none;
+      height: 0;
+      //opacity: 0;
+      overflow: hidden;
+      transition: height .5s linear;
 
       @media (min-width: 565px){
         font-size: 1rem;
         line-height: 1.2rem;
         color: $colorDeepCove;
+      }
+
+      &-content {
+        padding: 10px 25px;
+      }
+
+
+    }
+
+
+    &.open {
+      .cpn-accordion__item {
+        &-label {
+          &::after {
+            transform: rotate(0deg);
+          }
+        }
+
+        &-body {
+          
+
+          .cpn-accordion__item-body-content {
+            height: auto;
+          }
+        }
       }
     }
   }

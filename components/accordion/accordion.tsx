@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import AccordionItem from './accordion-item'
 
 const Accordion = (props) => {
@@ -11,7 +12,6 @@ const Accordion = (props) => {
         </div>
       )
     })
-
   }
 
   return (
