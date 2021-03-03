@@ -1,0 +1,41 @@
+.modal {
+  &-backdrop {
+    background-color: $colorBiscayThird;
+    
+    &.show {
+      opacity: 1 !important;
+    }
+  }
+
+  &-content {
+    border-radius: 10px;
+    border: none;
+    background-color: $colorGallery;
+  }
+}
+
+.cpn-modal {
+  &__head {
+    background-color: #193368;
+    justify-content: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    min-height: 50px;
+    padding: 1rem 1rem;
+    &-logo {
+      max-width: 200px;
+      margin: auto;
+    }
+  }
+
+  &__body {
+    padding: 1rem 1rem;
+    &-title {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      margin-bottom: 25px;
+      text-align: center;
+      font-family: "Circe-Bold", sans-serif;
+    }
+  }
+}

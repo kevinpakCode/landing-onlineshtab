@@ -105,6 +105,57 @@ h5,
 
 /*-----------------FORM---------------------*/
 /*
+* Form
+*/
+form {
+  .cpn-accept-condition-label {
+    text-align: right;
+
+    &__item {
+      font-size: 0.95rem;
+      line-height: 15px;
+      display: inline-block;
+      margin-bottom: 0px;
+      margin-left: 8px;
+      vertical-align: super;
+
+      & > a {
+        text-decoration: underline;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .cpn-form-control {
+    &__btn {
+      width: 200px;
+      justify-content: center;
+      font-size: 18px;
+      position: absolute;
+      right: 100px;
+      bottom: -55px;
+      box-shadow: none !important;
+  
+      @media (max-width: 960px) {
+        bottom: -43px;
+      }
+  
+      @media (max-width: 565px) {
+        right: 0;
+      }
+    }
+  
+  }
+
+  
+  
+}
+
+
+/*
 * Input
 */
 input {
@@ -198,4 +249,5 @@ input {
 
 
 @import '../components/btn.scss';
-@import './icon'
+@import './icon';
+@import './../components/modal';

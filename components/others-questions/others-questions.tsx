@@ -42,7 +42,7 @@ const OthersQuestion = () => {
                   <div className="download">
                     <img src="/assets/welcome/document_icon-42fa64bedb17d857f4c87f4cea8d62f02b87d6e996085c927b49915171ef64c8.svg" />
                     <span className="download__text"> Публичная оферта </span> 
-                    <a href="/welcome/oferta.pdf" className="download__link">скачать</a>
+                    <a href="/documents/pdf/oferta.pdf" className="download__link">скачать</a>
                   </div>
                   </Col>
                 </Row>
@@ -58,7 +58,7 @@ const OthersQuestion = () => {
                     </ul>
                   </div>
                   <div className="others-questions__body-right">
-                    <form onSubmit={formik.handleSubmit} className="others-questions__form">
+                    <form onSubmit={formik.handleSubmit} className="others-questions__form cpn-form-control">
                       <div className="form-row">
                         <input
                           type="text"
@@ -102,13 +102,13 @@ const OthersQuestion = () => {
                           value={formik.values.questionRequestCheckbox}
                         />
                           
-                        <label htmlFor="accept-condition" className="accept-condition-label">
-                          <span className="form-control-row-accept-label">Я согласен с <a href="/documents/pdf/onlineshtab-privacy-policy.pdf">политикой конфиденциальности</a></span>
-                          <span className="form-control-row-accept-label">и <a href="/documents/pdf/onlineshtab-personal-data-processing-policy.pdf">политикой обработки персональных данных</a></span>
+                        <label htmlFor="accept-condition" className="cpn-accept-condition-label">
+                          <span className="cpn-accept-condition-label__item">Я согласен с <a href="/documents/pdf/onlineshtab-privacy-policy.pdf">политикой конфиденциальности</a></span>
+                          <span className="cpn-accept-condition-label__item">и <a href="/documents/pdf/onlineshtab-personal-data-processing-policy.pdf">политикой обработки персональных данных</a></span>
                         </label>
                       </div>
                       <div className="form-row">
-                        <button type="submit" className="cpn-btn cpn-btn--red others-questions__form-btn">Отправить</button>
+                        <button type="submit" className="cpn-btn cpn-btn--red cpn-form-control__btn">Отправить</button>
                       </div>
                     </form>
                   </div>

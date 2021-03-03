@@ -113,36 +113,5 @@
     }
   }
 
-  &__form {
-    .accept-condition-label {
-      text-align: right;
-    }
-
-    .form-control-row-accept-label {
-      font-size: 0.95rem;
-      line-height: 15px;
-      display: inline-block;
-      margin-bottom: 0px;
-      margin-left: 8px;
-      vertical-align: super;
-    }
-
-    &-btn {
-      width: 200px;
-      justify-content: center;
-      font-size: 18px;
-      position: absolute;
-      right: 100px;
-      bottom: -55px;
-      box-shadow: none !important;
-
-      @media (max-width: 960px) {
-        bottom: -43px;
-      }
-
-      @media (max-width: 565px) {
-        right: 0;
-      }
-    }
-  }
+ 
 }
