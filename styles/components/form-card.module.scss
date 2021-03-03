@@ -1,0 +1,25 @@
+@import './../variables';
+
+.formCard {
+  border-radius: 10px;
+  background-color: $colorGallery;
+}
+
+.formCardHead {
+  padding: 1rem;
+  background-color: $colorBiscaySecond;
+  border-radius: 10px 10px 0 0;
+}
+
+.formCardHeadLogo {
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.formCardBody {
+  min-height: 50px;
+}
+
+.formCardBodyContent {
+  padding: 30px 25px 15px;
+}

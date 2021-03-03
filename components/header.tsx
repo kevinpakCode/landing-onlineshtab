@@ -51,7 +51,7 @@ export default function Header() {
                 </div>
                 <ul className="header__btns">
                   <li className="header__item"><a href="#" className="header__btns-link cpn-btn" title="Подать заявку"  onClick={handleShow}>Подать заявку</a></li>
-                  <li className="header__item"><a href="#" className="header__btns-link cpn-btn cpn-btn--login" title="Войти">Войти</a></li>
+                  <li className="header__item"><Link href="/admin/login" ><a className="header__btns-link cpn-btn cpn-btn--login" title="Войти">Войти</a></Link></li>
                 </ul>
               </div> 
             </Col>
