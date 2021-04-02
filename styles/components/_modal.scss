@@ -38,4 +38,13 @@
       font-family: "Circe-Bold", sans-serif;
     }
   }
+
+  .successRequest {
+    text-align: center;
+    padding: 15px;
+    color: $colorWhite;
+    background-color: $colorGreenSea;
+    margin-bottom: 20px;
+    border-radius: 8px;
+  }
 }

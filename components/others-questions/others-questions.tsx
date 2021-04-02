@@ -1,29 +1,64 @@
+import {useState} from 'react'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
+import axios from 'axios'
 
 
 const OthersQuestion = () => {
+  const [successRequest , setSuccessRequest] = useState(false)
+
   const formik = useFormik({
     initialValues: {
       name: '',
       email: '',
-      tel: '',
+      phone: '',
       questionRequestCheckbox:''
     },
     validationSchema: Yup.object({
       name: Yup.string()
         .required('Обязательно поля'),
       email: Yup.string().email('Введите правильный адрес электронной почты').required('Обязательно поля'),
-      tel: Yup.string()
+      phone: Yup.string()
         .required('Обязательно поля'),
       questionRequestCheckbox: Yup.boolean().oneOf([true], 'Field must be checked').required('Обязательно поля'),
     }),
-    onSubmit: values => {
-      alert(JSON.stringify(values, null, 2))
+    onSubmit: (values, {resetForm}) => {
+      const dataForm = {
+        data : {
+          name : values.name,
+          email: values.email,
+          phone: values.phone,
+          company: "",
+          text: ""
+        }
+      }
+
+      
+      //=> Axios, post data
+      axios({
+        method: 'post',
+        url: `${process.env.API_URL}/api/v1/forms`,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        data: JSON.stringify(dataForm),
+      })
+      .then(function (response) {
+        resetForm({values:''})
+        setSuccessRequest(true)
+
+        setTimeout(()=> {
+          setSuccessRequest(false)
+        }, 3000)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
     },
   })
 
@@ -40,7 +75,7 @@ const OthersQuestion = () => {
                   </Col>
                   <Col sm={6} className="text-right">
                   <div className="download">
-                    <img src="/assets/welcome/document_icon-42fa64bedb17d857f4c87f4cea8d62f02b87d6e996085c927b49915171ef64c8.svg" />
+                    <img src="/images/uploads/document_icon.svg" />
                     <span className="download__text"> Публичная оферта </span> 
                     <a href="/documents/pdf/oferta.pdf" className="download__link">скачать</a>
                   </div>
@@ -58,6 +93,12 @@ const OthersQuestion = () => {
                     </ul>
                   </div>
                   <div className="others-questions__body-right">
+                    { 
+                      successRequest&&
+                      <div className="successRequest">
+                        Ваша заявка успешно отправлена!
+                      </div>
+                    }
                     <form onSubmit={formik.handleSubmit} className="others-questions__form cpn-form-control">
                       <div className="form-row">
                         <input
@@ -84,13 +125,13 @@ const OthersQuestion = () => {
                       <div className="form-row">
                         <input
                           type="text"
-                          className={`cpn-field ${formik.touched.tel && formik.errors.tel ? 'cpn-field--error': 'cpn-field--valid'}`}
-                          name="tel"
+                          className={`cpn-field ${formik.touched.phone && formik.errors.phone ? 'cpn-field--error': 'cpn-field--valid'}`}
+                          name="phone"
                           placeholder="Телефон"
                           onChange={formik.handleChange}
-                          value={formik.values.tel}
+                          value={formik.values.phone}
                         />
-                        {formik.touched.tel && formik.errors.tel ? (<div  className="cpn-field-message">{formik.errors.tel}</div>) : null}
+                        {formik.touched.phone && formik.errors.phone ? (<div  className="cpn-field-message">{formik.errors.phone}</div>) : null}
                       </div>
                       <div className="form-row">
                         <input
